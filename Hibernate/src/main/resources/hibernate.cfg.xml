@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<hibernate-configuration>
+    <session-factory>
+
+        <!-- Oracle Dialect -->
+        <property name="hibernate.dialect">
+            org.hibernate.dialect.OracleDialect
+        </property>
+
+        <!-- Database Connection -->
+        <property name="hibernate.connection.driver_class">
+            oracle.jdbc.OracleDriver
+        </property>
+
+        <property name="hibernate.connection.url">
+            jdbc:oracle:thin:@localhost:1521:xe
+        </property>
+
+        <property name="hibernate.connection.username">system</property>
+        <property name="hibernate.connection.password">Anitha123@456</property>
+
+        <!-- Show SQL -->
+        <property name="hibernate.show_sql">true</property>
+
+        <!-- Auto table update -->
+        <property name="hibernate.hbm2ddl.auto">update</property>
+
+        <!-- Session Context -->
+        <property name="hibernate.current_session_context_class">thread</property>
+
+        <!-- Entity Mappings -->
+        <mapping class="com.kce.entity.Borrower"/>
+        <mapping class="com.kce.entity.Loan"/>
+        <mapping class="com.kce.entity.Installment"/>
+
+    </session-factory>
+</hibernate-configuration>
